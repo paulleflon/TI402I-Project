@@ -1,0 +1,16 @@
+:root {
+    --main-color: #006769;
+    --secondary-color: #40A578;
+    --main-light: #9DDE8B;
+    --secondary-light: #F3CA52;
+    --text-color:#FFF5EA;
+}
+
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
