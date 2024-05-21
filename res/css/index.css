@@ -1,0 +1,61 @@
+body {
+    background-color: var(--text-color);
+}
+
+h2 {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 40px;
+}
+
+.narrow-section {
+    margin: 10% auto;
+    width: 70%;
+}
+
+p {
+    font-family: 'Outfit', sans-serif;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+.carousel{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.slide {
+    position: absolute;
+    object-fit: cover;
+
+    height: 700px;
+    width: 90%;
+    display: none; 
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    transition: opacity 2s ease-in-out; 
+    opacity: 0;
+}
+
+.slide.active {
+    display: block;
+    position: relative; 
+    opacity: 1;
+}
