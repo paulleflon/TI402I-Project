@@ -1,0 +1,75 @@
+header {
+    height: 500px;
+    background: url('/res/img/placeholder-park.jpg') center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .header-title-container {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header .header-title-container h1 {
+    font: 800 30pt 'Outfit';
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 10px 20px #000;
+    text-align: center;
+}
+
+header .header-title-container .header-rating {
+    font: 500 12pt 'Outfit';
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    bottom: 0;
+}
+
+header .header-rating:before, header .header-rating:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: #fff;
+    opacity: .7;
+}
+
+header .header-rating:before {
+    left: -10px;
+    transform: translateX(-100%);
+}
+header .header-rating:after {
+    right: -10px;
+    transform: translateX(100%);
+}
+
+header .header-rating img {
+    width: 16px;
+}
+
+header .header-park-infos {
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    padding: 12px 40px;
+    transform: translateY(50%);
+    border-radius: 10em;
+    gap: 15px;
+    font: 500 12pt 'Noto Sans';
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 13px #3334;
+}
+
+header .header-park-infos .info-item div:first-child {
+    color: #aaa;
+    font: 9pt Arial;
+    margin-bottom: 3px;
+}
