@@ -1,11 +1,78 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+}
+section {
+    width: 80%;
+    margin: 20px auto;
+    color: var(--text-color);
+    font: 12pt 'Noto Sans', sans-serif;
+}
+
+section.introduction {
+    border: 1px solid #fff5;
+    padding: 10px;
+    border-radius: 16px;
+    width: 90%;
+    & p {
+        margin: 0;
+        font-size: 13pt;
+    }
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+h2 {
+    font-size: 28pt;
+}
+
+h3 {
+    font-size: 22pt;
+}
+
+h4 {
+    font-size: 17pt;
+}
+
+p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+figure {
+    margin: 5px 0;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+figcaption {
+    text-align: center;
+    font: italic 10pt Noto Sans, sans-serif;
+    color: #ffffff80;
+}
+
 header {
+    width: 100%;
     height: 500px;
-    background: url('/res/img/placeholder-park.jpg') center center / cover;
+    background: url('../img/placeholder-park.jpg') center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 70px;
 }
-
 
 header .header-title-container {
     padding: 8px 10px;
@@ -16,7 +83,7 @@ header .header-title-container {
 }
 header .header-title-container h1 {
     font: 800 30pt 'Outfit';
-    color: #fff;
+    color: var(--text-color);
     margin: 0;
     text-shadow: 0 10px 20px #000;
     text-align: center;
@@ -24,7 +91,7 @@ header .header-title-container h1 {
 
 header .header-title-container .header-rating {
     font: 500 12pt 'Outfit';
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     gap: 3px;
@@ -72,4 +139,101 @@ header .header-park-infos .info-item div:first-child {
     color: #aaa;
     font: 9pt Arial;
     margin-bottom: 3px;
+}
+
+
+#summary {
+    width: 90%;
+    margin: 0 auto;
+    position: sticky;
+    top: 30px;
+    border: 1px solid #0002;
+    background: #00000010;
+    color: var(--text-color);
+    height: fit-content;
+    max-height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 300;
+    backdrop-filter: blur(8px);
+    & #summary-title {
+        font: 600 13pt 'Outfit', sans-serif;
+        margin-bottom: 5px;
+        & i {
+            margin-right: 3px;
+        }
+
+        & #toggle-links {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    & #links {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        & .highlight {
+            font-weight: bold;
+        }
+    }
+    &.collapsed {
+        & #links {
+            height: 0;
+        }
+        & #toggle-links {
+            transform: rotate(180deg);
+        }
+    }
+    & a {
+        color: var(--text-color);
+        font: 12pt 'Outfit', sans-serif;
+        text-decoration: none;
+        margin: 4px 0;
+
+        &.h3 {
+            padding-left: 5px;
+        }
+        &.h4 {
+            padding-left: 10px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+@media screen and (min-width: 860px) {
+    header {
+        width: 90%;
+        margin: 5vw auto 70px auto;
+        border-radius: 16px;
+        box-shadow: 0 10px 10px #0002;
+    }
+
+    p {
+        font-size: 13pt;
+    }
+
+    .main-content {
+        width: 90%;
+        display: flex;
+        flex-direction: row-reverse;
+        & section {
+            flex: 1;
+        }
+    }
+    #summary {
+        width: fit-content;
+        &.collapsed  #links {
+            height: auto;
+        }
+        &.collapsed #toggle-links {
+            display: none;
+        }
+    }
 }
