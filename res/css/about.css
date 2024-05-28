@@ -1,0 +1,23 @@
+body{
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+}
+
+.frame{
+    padding: 2% 10%;
+    width: 40%;
+}
+
+.students{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+img{
+    border: 2px solid var(--text-color);
+    width: 200px;
+    border-radius: 20px;
+}

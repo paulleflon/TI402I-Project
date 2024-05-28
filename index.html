@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="res/css/main.css">
     <link rel="stylesheet" href="res/css/index.css">
+    <script src="res/js/data.js"></script>
     <script src="res/js/carousel.js" defer></script>
     <title>ParkPatrol</title>
 </head>
 <body>
     <section>
-        <h2>ParkPatrol</h2>
+        <h1>ParkPatrol</h1>
         <p>
             More than 100 french parks for you to explore !
         </p> 
     </section>
 
-    <section class="carousel">
-        <button class="previous"><</button>
-        <div class="slider">
-            <img class="slide active" src="res/img/Parc_de_Sceaux.jpg" alt="THE BUCKET PARK">
-            <img class="slide" src="res/img/Parc_Andre_Citroen.jpg" alt="THE CAR PARK">
-            <img class="slide" src="res/img/Parc_Departemental_Hauts_de_Bruyeres.jpg" alt="THE BUSH PARK">
-            <img class="slide" src="res/img/Parc_Andre_Malraux.jpg" alt="THE BAD BURP PARK">
-            <img class="slide" src="res/img/Parc_Montsouris.webp" alt="THE MOUSE MOUNTAIN PARK">
-            <img class="slide" src="res/img/Parc_Raspail.jpg" alt="THE STRAW RACE PARK">
-
+    <section>
+        <div class="carousel">
+            <div class="parc-name"></div>
+            <div class="slides-container">
+                <div class="slides"></div>
+            </div>
+            
+            <div class="carousel-buttons">
+                <button class="carousel-button" id="prev">❮</button>
+                <button class="carousel-button" id="next">❯</button>
+            </div>
         </div>
-        <button class="next">></button>
     </section>
 
+    
+    
 
 </body>
 </html>

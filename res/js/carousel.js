@@ -1,30 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
 
-    function showSlide(newIndex) {
-        slides.forEach((slide, idx) => {
-            if (idx === newIndex) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        });
+
+// For the carousel display of pictures
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselImages = document.querySelector('.slides');
+    const name = document.querySelector('parc-name');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    for (const key in data) {
+        const img = document.createElement('img');
+        img.src = data[key];
+        carouselImages.appendChild(img);
+        updateCarousel();
+    }    
+
+
+
+    function updateCarousel() {
+        const width = carouselImages.clientWidth;
+        carouselImages.style.transform = `translateX(-${currentIndex * width}px)`;
     }
 
-    function previousSlide() {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-    }
+    const images = carouselImages.querySelectorAll('img');
 
-    function nextSlide() {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-    }
+    prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateCarousel();
+    });
 
-    document.querySelector('.previous').addEventListener('click', previousSlide);
-    document.querySelector('.next').addEventListener('click', nextSlide);
+    nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
 
-    // Initially show the first slide
-    showSlide(index);
+     // Automatically change images every 3 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 6000);
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
 });
+
