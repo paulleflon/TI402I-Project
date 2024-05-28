@@ -1,0 +1,76 @@
+body {
+    background-color: var(--main-color);
+}
+
+h1 {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 60px;
+}
+
+.parc-name{
+    font-family: 'Outfit', sans-serif;
+    text-shadow: 10px 10px 10px  #0000007c;
+    font-size: 40px;
+    color: var(--text-color);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 3;
+}
+
+.narrow-section {
+    margin: 10% auto;
+    width: 70%;
+}
+
+p {
+    font-family: 'Outfit', sans-serif;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 30px;
+}
+
+/*CAROUSEL STUFF*/
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px #00000011;
+}
+.slides {    
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+.slides img {
+    box-sizing: border-box;
+    width: 100%;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.carousel-button {
+    background: #00000080;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+section{
+    margin: 2%;
+}

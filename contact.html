@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/main.css">
+    <link rel="stylesheet" href="res/css/contact.css">
+    <title>Contact us</title>
+</head>
+<body>
+
+    <h1>Contact us</h1>
+    <section class="narrow-section">
+        <form action="">
+            <fieldset>
+                <legend>&nbsp;<strong>Your information</strong>&nbsp;</legend> <br><br>
+
+                <label for="fName">First name:</label>
+                <input id="fName" type="text" name="first_name" placeholder="John"> <br>
+
+                <label for="lName">Last name:</label>
+                <input id="lName" type="text" name="last_name" placeholder="Doe"> <br>
+
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" name="email" placeholder="john.doe@gmail.com"> <br>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Select</option>
+                    <option value="man">Man</option>
+                    <option value="womand">Woman</option>
+                    <option value="nonBinary">Non-binary</option>
+                    <option value="other">Other</option>
+                </select> <br>
+            </fieldset>
+        </form>
+
+        <form action="">
+            <fieldset>
+                <legend>&nbsp;<strong>Your message</strong>&nbsp;</legend><br><br>
+
+                <label for="typeMessage">Type:</label>
+                <select id="typeMessage" name="typeMessage">
+                    <option value="">Select</option>
+                    <option value="biz">Business</option>
+                    <option value="reco">Recommendations</option>
+                    <option value="comment">Comments</option>
+                    <option value="nonBinary">Other</option>
+                </select> <br>
+
+                <label for="textArea">Tell us it all:</label>
+                <input type="text" class="textArea" placeholder="The last park I went to did not dissapoint. Thank you SuperParks !"> <br>
+
+                <label for="agree">Terms of agreement:</label>                
+                <li>
+                    <label for="agree" class="agree">I agree for my first and last names to be shared at the end of park review pages I suggested</label>
+                    <input type="radio" name="agree" id="agree" class="agreement"> <br>
+
+                    <label for="disagree" class="agree">I don't agree for my first and last names to be shared at the end of park review pages I suggested</label>
+                    <input type="radio" name="agree" id="disagree" class="agreement"> 
+                </li>
+                
+            </fieldset>
+        </form>
+    </section>
+
+
+</body>
+</html>
