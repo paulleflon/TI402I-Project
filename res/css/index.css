@@ -11,6 +11,7 @@ h3 {
     color: var(--main-light);
     text-align: center;
     font-size: 35px;
+}
 
 .park-name{
     font: 700 29pt 'Outfit', sans-serif;
