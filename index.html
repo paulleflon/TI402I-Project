@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="res/css/main.css">
     <link rel="stylesheet" href="res/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="res/js/data.js"></script>
     <script src="res/js/carousel.js" defer></script>
     <title>ParkPatrol</title>
@@ -19,14 +20,21 @@
 
     <section>
         <div class="carousel">
-            <div class="parc-name"></div>
+            <div class="park-name"></div>
             <div class="slides-container">
                 <div class="slides"></div>
             </div>
             
-            <div class="carousel-buttons">
-                <button class="carousel-button" id="prev">❮</button>
-                <button class="carousel-button" id="next">❯</button>
+            <div class="carousel-navigation">
+                <div class="carousel-dots-container"></div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button" id="prev">
+                        <i class='fa fa-chevron-left'></i>
+                    </button>
+                    <button class="carousel-button" id="next">
+                        <i class='fa fa-chevron-right'></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

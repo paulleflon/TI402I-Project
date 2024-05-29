@@ -9,15 +9,14 @@ h1 {
     font-size: 60px;
 }
 
-.parc-name{
-    font-family: 'Outfit', sans-serif;
+.park-name{
+    font: 700 29pt 'Outfit', sans-serif;
     text-shadow: 10px 10px 10px  #0000007c;
-    font-size: 40px;
     color: var(--text-color);
     position: absolute;
     text-align: center;
-    top: 50%;
-    width: 100%;
+    left: 20px;
+    bottom: 60px;
     z-index: 3;
 }
 
@@ -54,23 +53,68 @@ p {
     flex-shrink: 0;
     max-width: 100%;
 }
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-.carousel-button {
+
+.carousel-navigation {
     background: #00000080;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    z-index: 999;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 13px;
+    border-radius: 10em;
+    display: flex;
+    gap: 5px;
+    & .carousel-dots-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        & .carousel-dot {
+            width: 8px;
+            height: 8px;
+            background: #fffa;
+            border-radius: 10em;
+            cursor: pointer;
+            transition: width .3s;
+            &.current {
+                width: 50px;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: #fff;
+                    top: 0;
+                    left: 0;
+                    border-radius: 10em;
+                    opacity: 1;
+                    height: 100%;
+                    width: 100%;
+                    animation: progress-indicator 6s linear;
+                }
+            }
+        }
+    }
+
+    & .carousel-buttons {
+        display: flex;
+        gap: 3px;
+        & .carousel-button {
+            border-radius: 50%;
+            background: #00000040;
+            appearance: none;
+            border: 1px solid #fff4;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
-
-section{
-    margin: 2%;
+@keyframes progress-indicator {
+    from {
+        width: 8px;
+    }
 }
