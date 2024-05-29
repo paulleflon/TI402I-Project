@@ -5,19 +5,24 @@ h1 {
     font-size: 60px;
 }
 
-h2 {
-    font-family: 'Outfit', sans-serif;
-    color: var(--main-light);
-    font-weight: bold;
-    text-align: center;
-    font-size: 40px;
-}
+
 h3 {
     font-family: 'Outfit', sans-serif;
     color: var(--main-light);
     text-align: center;
     font-size: 35px;
+
+.park-name{
+    font: 700 29pt 'Outfit', sans-serif;
+    text-shadow: 10px 10px 10px  #0000007c;
+    color: var(--text-color);
+    position: absolute;
+    text-align: center;
+    left: 20px;
+    bottom: 60px;
+    z-index: 3;
 }
+  
 p{
     font-family: 'Outfit', sans-serif;
     color: var(--text-color);
@@ -56,22 +61,65 @@ figcaption{
     flex-shrink: 0;
     max-width: 100%;
 }
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-.carousel-button {
-    background: #00000080;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-}
 
+.carousel-navigation {
+    background: #00000080;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    z-index: 999;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 13px;
+    border-radius: 10em;
+    display: flex;
+    gap: 5px;
+    & .carousel-dots-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        & .carousel-dot {
+            width: 8px;
+            height: 8px;
+            background: #fffa;
+            border-radius: 10em;
+            cursor: pointer;
+            transition: width .3s;
+            &.current {
+                width: 50px;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: #fff;
+                    top: 0;
+                    left: 0;
+                    border-radius: 10em;
+                    opacity: 1;
+                    height: 100%;
+                    width: 100%;
+                    animation: progress-indicator 6s linear;
+                }
+            }
+        }
+    }
+
+    & .carousel-buttons {
+        display: flex;
+        gap: 3px;
+        & .carousel-button {
+            border-radius: 50%;
+            background: #00000040;
+            appearance: none;
+            border: 1px solid #fff4;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
 
 .container{
     display: flex;
@@ -103,4 +151,11 @@ img{
     margin-top: 6%;
     border-radius: 20px;
     width: 100%;
+}
+  
+  
+@keyframes progress-indicator {
+    from {
+        width: 8px;
+    }
 }
