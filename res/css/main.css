@@ -17,3 +17,25 @@ body {
     margin: 0;
     background: var(--main-color);
 }
+
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #40a5786c;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 10px #00000011;
+}
+
+a{
+    text-decoration: none;
+    color: var(--main-light);
+}
+a:hover{
+    color: var(--text-color);
+}

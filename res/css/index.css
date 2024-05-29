@@ -1,13 +1,16 @@
-body {
-    background-color: var(--main-color);
-}
-
 h1 {
     font-family: 'Noto Sans', sans-serif;
     text-align: center;
     color: var(--text-color);
     font-size: 60px;
 }
+
+
+h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--main-light);
+    text-align: center;
+    font-size: 35px;
 
 .park-name{
     font: 700 29pt 'Outfit', sans-serif;
@@ -19,18 +22,23 @@ h1 {
     bottom: 60px;
     z-index: 3;
 }
-
-.narrow-section {
-    margin: 10% auto;
-    width: 70%;
-}
-
-p {
+  
+p{
     font-family: 'Outfit', sans-serif;
-    color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 20px;
+    margin: 0;
     text-align: center;
-    font-size: 30px;
 }
+
+figcaption{
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-color);
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
 
 /*CAROUSEL STUFF*/
 .carousel {
@@ -113,6 +121,39 @@ p {
     }
 }
 
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 30%;
+}
+.article{
+    padding: 2%;
+    margin: 2% 2%;
+    background-color: #40a5786c;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px #00000011;
+}
+.title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+img{
+    margin-top: 6%;
+    border-radius: 20px;
+    width: 100%;
+}
+  
+  
 @keyframes progress-indicator {
     from {
         width: 8px;
