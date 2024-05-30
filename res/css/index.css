@@ -46,10 +46,14 @@ figcaption{
 
 
 /*CAROUSEL STUFF*/
+
+.carousel-container {
+    flex: 1;
+}
+
 .carousel {
     position: relative;
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
     margin: auto;
     overflow: hidden;
     border-radius: 20px;
@@ -132,9 +136,14 @@ figcaption{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-flow: wrap;
+    gap: 30px;
+    margin: 0 40px;
 }
 .articles{
-    width: 30%;
+    min-width: 475px;
+    max-width: 800px;
+    flex: 1;
 }
 .article{
     display: flex;
