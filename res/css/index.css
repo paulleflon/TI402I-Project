@@ -46,10 +46,14 @@ figcaption{
 
 
 /*CAROUSEL STUFF*/
+
+.carousel-container {
+    flex: 1;
+}
+
 .carousel {
     position: relative;
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
     margin: auto;
     overflow: hidden;
     border-radius: 20px;
@@ -132,26 +136,53 @@ figcaption{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    flex-flow: wrap;
+    gap: 30px;
+    margin: 0 40px;
 }
 .articles{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 30%;
+    min-width: 475px;
+    max-width: 800px;
+    flex: 1;
 }
 .article{
-    padding: 2%;
-    margin: 2% 2%;
-    background-color: #40a5786c;
+    display: flex;
+    background-color: white;
+    padding: 10px;
     border-radius: 20px;
-    box-shadow: 0 0 10px 10px #00000011;
+    height: 150px;
+    gap: 10px;
+    overflow: hidden;
     & img {
-        margin-top: 6%;
-        border-radius: 20px;
-        width: 100%;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    & .article-texts {
+        display: flex;
+        flex-direction: column;
+    }
+    & .article-texts h4 {
+        font: 600 14pt 'Outfit', sans-serif;
+        margin: 0;
+    }
+
+    & .article-texts p {
+        color: black;
+        font: 11pt 'Noto Sans', sans-serif;
+        text-align: left;
+        flex: 1;
+        overflow: hidden;
+        &.link {
+            flex: inherit;
+            font-style: italic;
+        }
+        & a {
+            color: inherit;
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 .title{
