@@ -19,9 +19,10 @@ body {
 }
 
 header {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 20px;
-    z-index: 1000;
+    z-index: 10000000;
 }
 
 nav {
@@ -31,7 +32,7 @@ nav {
     background-color: rgba(64, 165, 120, 0.47);
     font: 600 14pt 'Outfit', sans-serif;
     padding: 20px 0;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0 0 10px 10px #00000011;

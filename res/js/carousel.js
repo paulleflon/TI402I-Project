@@ -2,9 +2,11 @@
 
 // For the carousel display of pictures
 document.addEventListener('DOMContentLoaded', function() {
-    const carouselImages = document.querySelector('.slides');
+    const slidesContainer = document.querySelector('.slides');
     const carouselDots = document.querySelector('.carousel-dots-container');
-    const parkNames = Object.keys(data);
+    const carouselLink = document.querySelector('.carousel .clickable-link');
+
+    const favoriteParks = reviews.filter( e=> e.favorite);
 
     const nameContainer = document.querySelector('.park-name');
     const prevButton = document.getElementById('prev');
@@ -12,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let interval;
 
-    for (const key in data) {
+    for (const park of favoriteParks) {
         const img = document.createElement('img');
-        img.src = data[key];
-        carouselImages.appendChild(img);
+        img.src = park.splashart;
+        slidesContainer.appendChild(img);
     }
 
-    const images = carouselImages.querySelectorAll('img');
+    const images = slidesContainer.querySelectorAll('img');
     for (const i in Array.from(images)) {
         const dot = document.createElement('div');
         dot.classList.add('carousel-dot');
@@ -30,11 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateCarousel() {
-        const width = carouselImages.clientWidth;
-        carouselImages.style.transform = `translateX(-${currentIndex * width}px)`;
+        const width = slidesContainer.clientWidth;
+        carouselLink.href = '/article?id=' + favoriteParks[currentIndex].id;
+        slidesContainer.style.transform = `translateX(-${currentIndex * width}px)`;
         carouselDots.querySelectorAll('.carousel-dot').forEach(e => e.classList.remove('current'));
         carouselDots.querySelector(`.carousel-dot:nth-child(${currentIndex + 1})`).classList.add('current');
-        nameContainer.textContent = parkNames[currentIndex];
+        nameContainer.textContent = favoriteParks[currentIndex].name;
         clearInterval(interval);
         interval = setInterval(intervalFunction, 6000);
     }
