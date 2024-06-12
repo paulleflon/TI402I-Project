@@ -18,14 +18,14 @@ h3 {
 }
 
 .park-name{
-    font: 700 29pt 'Outfit', sans-serif;
+    font: 700 22pt 'Outfit', sans-serif;
     text-shadow: 10px 10px 10px  #0000007c;
     color: var(--text-color);
     position: absolute;
     text-align: center;
     left: 20px;
     bottom: 60px;
-    z-index: 3;
+    z-index: 5;
 }
   
 p{
@@ -49,16 +49,24 @@ figcaption{
 
 .carousel-container {
     flex: 1;
+    max-width: 100%;
+}
+
+.carousel .clickable-link {
+    display: block;
 }
 
 .carousel {
     position: relative;
+    display: block;
     width: 800px;
+    max-width: 100%;
     margin: auto;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 0 10px 10px #00000011;
     height: fit-content;
+    flex-shrink: 1;
 }
 .slides {    
     display: flex;
@@ -141,7 +149,6 @@ figcaption{
     margin: 0 40px;
 }
 .articles{
-    min-width: 475px;
     max-width: 800px;
     flex: 1;
 }
@@ -163,7 +170,7 @@ figcaption{
         flex-direction: column;
     }
     & .article-texts h4 {
-        font: 600 14pt 'Outfit', sans-serif;
+        font: 600 12pt 'Outfit', sans-serif;
         margin: 0;
     }
 

@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const slidesContainer = document.querySelector('.slides');
     const carouselDots = document.querySelector('.carousel-dots-container');
+    const carouselLink = document.querySelector('.carousel .clickable-link');
 
     const favoriteParks = reviews.filter( e=> e.favorite);
 
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCarousel() {
         const width = slidesContainer.clientWidth;
+        carouselLink.href = '/article?id=' + favoriteParks[currentIndex].id;
         slidesContainer.style.transform = `translateX(-${currentIndex * width}px)`;
         carouselDots.querySelectorAll('.carousel-dot').forEach(e => e.classList.remove('current'));
         carouselDots.querySelector(`.carousel-dot:nth-child(${currentIndex + 1})`).classList.add('current');
